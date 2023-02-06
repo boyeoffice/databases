@@ -49,6 +49,17 @@ docker run --name mysql -d \
     mysql:8
 ```
 
+OR
+
+```
+docker run --name mysql -d \
+    -p 3306:3306 \
+    -e MYSQL_ROOT_PASSWORD=change-me \
+    --restart unless-stopped \
+    --tmpfs /var/lib/mysql \
+    mysql:latest
+```
+
 Repeat the steps to stop and remove your container:
 
 ```
